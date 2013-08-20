@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "phones-brazil"
   gem.homepage = "http://github.com/bioritmo/phones-brazil"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Validates Brazilian phone numbers}
+  gem.description = %Q{Validates Brazilian phone numbers for size and format}
   gem.email = "github@bioritmo.com.br"
   gem.authors = ["Ricardo Shiota Yasuda"]
   # dependencies defined in Gemfile
