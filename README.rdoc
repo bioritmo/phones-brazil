@@ -3,7 +3,7 @@
 Description goes here.
 
 == Contributing to phones-brazil
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
@@ -14,6 +14,6 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2013 Ricardo Shiota Yasuda. See LICENSE.txt for
+Copyright (c) 2013 Bio Ritmo Academias. See LICENSE.txt for
 further details.
 
