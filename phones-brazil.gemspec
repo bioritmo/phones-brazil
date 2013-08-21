@@ -25,10 +25,8 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/phones-brazil.rb",
-    "lib/phones-brazil/cell_phone_validator.rb",
-    "spec/cell_phone_validator_spec.rb",
-    "test/helper.rb",
-    "test/test_phones-brazil.rb"
+    "lib/phones-brazil/cell_phone.rb",
+    "spec/cell_phone_spec.rb"
   ]
   s.homepage = "http://github.com/bioritmo/phones-brazil"
   s.licenses = ["MIT"]
