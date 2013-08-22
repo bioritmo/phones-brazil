@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/phones-brazil.rb",
     "lib/phones-brazil/cell_phone.rb",
+    "lib/phones-brazil/cell_phone_validator.rb",
     "spec/cell_phone_spec.rb"
   ]
   s.homepage = "http://github.com/bioritmo/phones-brazil"

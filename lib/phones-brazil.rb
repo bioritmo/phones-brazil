@@ -1,1 +1,2 @@
 require 'phones-brazil/cell_phone'
+require 'phones-brazil/cell_phone_validator'
