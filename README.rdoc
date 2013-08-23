@@ -8,15 +8,15 @@ Validates area code (2 digits and existing area codes) and cellphone number size
 
 === Rails 2
 
-class Phone < ActiveRecord::Base
-  validates_cellphone
-end
+  class Phone < ActiveRecord::Base
+    validates_cellphone
+  end
 
 === Rails 3
 
-class Phone < ActiveRecord::Base
-  validates_with PhonesBrazil::Validator::CellPhoneValidator
-end
+  class Phone < ActiveRecord::Base
+    validates_with PhonesBrazil::Validator::CellPhoneValidator
+  end
 
 == Authors
 
