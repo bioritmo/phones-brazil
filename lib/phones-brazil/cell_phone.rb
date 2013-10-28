@@ -27,6 +27,12 @@ module PhonesBrazil
       when 12..19
         (@number.size == 9 && !is_included?(12..19, @number.to_i)) ||
         (@number.size == 8 && is_included?(12..19, @number.to_i))
+      when 21
+        (@number.size == 9 && !is_included?(21, @number.to_i)) ||
+        (@number.size == 8 && is_included?(21, @number.to_i))
+      when 22, 24, 27, 28
+        (@number.size == 9 && !is_included?([22,24,27,28], @number.to_i)) ||
+        (@number.size == 8 && is_included?([22,24,27,28], @number.to_i))
       else
         @number.size == 8
       end
@@ -52,7 +58,9 @@ module PhonesBrazil
       {
         11 => [(70000000..70109999), (77000000..78999999), (79000000..79089999),
           (79100000..79219999), (79230000..79499999)],
-        12..19 => [(77000000..78999999)]
+        12..19 => [(77000000..78999999)],
+        21 => [(70000000..70999999), (77000000..78999999)],
+        [22,24,27,28] => [(77000000..78999999)]
       }
     end
 
