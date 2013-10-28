@@ -6,14 +6,6 @@ Validates area code (2 digits and existing area codes) and cellphone number size
 
 == Usage
 
-=== Rails 2
-
-  class Phone < ActiveRecord::Base
-    validates_cellphone
-  end
-
-=== Rails 3
-
   class Phone < ActiveRecord::Base
     validates_with PhonesBrazil::Validator::CellPhoneValidator
   end

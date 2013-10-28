@@ -12,13 +12,4 @@ module PhonesBrazil
       end
     end
   end
-
-  module ClassMethods
-    def validates_cellphone
-      validates_with ActiveRecord::Base::CellPhoneValidator
-    end
-  end
 end
-
-ActiveRecord::Base.send(:include, PhonesBrazil::Validator)
-ActiveRecord::Base.send(:extend, PhonesBrazil::ClassMethods)
