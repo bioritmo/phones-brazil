@@ -2,7 +2,7 @@
 
 Validates Brazilian phone numbers. Currently works only for cellphones.
 
-Validates area code (2 digits and existing area codes) and cellphone number size (currently 9 digits for area codes 11-19)
+Validates area code (2 digits and existing area codes) and cellphone number size (currently 9 digits for area codes 11-28)
 
 == Usage
 
