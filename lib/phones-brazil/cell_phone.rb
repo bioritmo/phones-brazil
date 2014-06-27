@@ -3,7 +3,7 @@ module PhonesBrazil
 
     def initialize(area,number)
       @area = area.to_i
-      @number = number
+      @number = number.to_s
     end
 
     def valid?
