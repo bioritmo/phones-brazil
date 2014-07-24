@@ -4,7 +4,7 @@ module PhonesBrazil
   module Validator
     class CellPhoneValidator < ActiveModel::Validator
       def validate(record)
-        record.errors.add :base, :invalid unless phone_valid?(record.area,record.number)
+        record.errors.add :number, :invalid unless phone_valid?(record.area,record.number)
       end
 
       def phone_valid?(area,number)
