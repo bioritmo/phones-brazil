@@ -10,9 +10,16 @@ Validates area code (2 digits and existing area codes) and cellphone number size
     validates_with PhonesBrazil::Validator::CellPhoneValidator
   end
 
+== Ruby Versions
+
+Tested against version 1.9.3
+
 == Authors
 
 Ricardo Shiota Yasuda (@shadowmaru)
+Nícolas Marçal (@nicolasmarcal)
+Dafny Domiciana (@dafny)
+Ícaro Torres (@icarovts)
 
 == Copyright
 
