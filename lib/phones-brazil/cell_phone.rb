@@ -48,9 +48,9 @@ module PhonesBrazil
       when 31, 32, 33, 34, 35, 37, 38
         (@number.size == 9 && !is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i)) ||
         (@number.size == 8 && is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i))
-      when 71..79
-        (@number.size == 9 && !is_included?(71..79, @number.to_i)) ||
-        (@number.size == 8 && is_included?(71..79, @number.to_i))
+      when [71, 73, 74, 75, 77, 79]
+        (@number.size == 9 && !is_included?([71, 73, 74, 75, 77, 79], @number.to_i)) ||
+        (@number.size == 8 && is_included?([71, 73, 74, 75, 77, 79], @number.to_i))
       when 81..89
         (@number.size == 9 && !is_included?(81..89, @number.to_i)) ||
         (@number.size == 8 && is_included?(81..89, @number.to_i))
@@ -74,7 +74,7 @@ module PhonesBrazil
         21 => [(70000000..70999999), (77000000..78999999)],
         [22, 24, 27, 28] => [(77000000..78999999)],
         [31, 32, 33, 34, 35, 37, 38] => [(74000000..78999999)],
-        71..79 => [(74000000..78999999)],
+        [71, 73, 74, 75, 77, 79] => [(74000000..78999999)],
         81..89 => [(74000000..78999999)],
         91..99 => [(74000000..78999999)]
       }
