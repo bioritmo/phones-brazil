@@ -48,7 +48,7 @@ module PhonesBrazil
       when 31, 32, 33, 34, 35, 37, 38
         (@number.size == 9 && !is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i)) ||
         (@number.size == 8 && is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i))
-      when [71, 73, 74, 75, 77, 79]
+      when 71, 73, 74, 75, 77, 79
         (@number.size == 9 && !is_included?([71, 73, 74, 75, 77, 79], @number.to_i)) ||
         (@number.size == 8 && is_included?([71, 73, 74, 75, 77, 79], @number.to_i))
       when 81..89
