@@ -23,6 +23,33 @@ describe PhonesBrazil::CellPhone do
       it { PhonesBrazil::CellPhone.new("22", "970111111").should be_valid }
       it { PhonesBrazil::CellPhone.new("28", "971111111").should be_valid }
     end
+
+    context 'from area codes 31-35, 37, 38' do
+      (31..35).to_a.each do |area|
+        it { PhonesBrazil::CellPhone.new(area, "970111111").should be_valid }
+      end
+      [37, 38].each do |area|
+        it { PhonesBrazil::CellPhone.new(area, "970111111").should be_valid }
+      end
+    end
+
+    context 'from area codes 71, 73, 74, 75, 77, 79' do
+      [71, 73, 74, 75, 77, 79].each do |area|
+        it { PhonesBrazil::CellPhone.new(area, "971111111").should be_valid }
+      end
+    end
+
+    context 'from area codes 81-89' do
+      (81..89).to_a.each do |area|
+        it { PhonesBrazil::CellPhone.new(area, '970111111').should be_valid }
+      end
+    end
+
+    context 'from area codes 91-99' do
+      (91..99).to_a.each do |area|
+        it { PhonesBrazil::CellPhone.new(area, '970111111').should be_valid }
+      end
+    end
   end
 
   describe "invalid phones" do
@@ -58,6 +85,22 @@ describe PhonesBrazil::CellPhone do
 
       context "from area codes 22, 24, 27, 28" do
         it { PhonesBrazil::CellPhone.new("22", "70111111").should_not be_valid }
+      end
+
+      context 'from area codes 31-38' do
+        it { PhonesBrazil::CellPhone.new("31", "70111111").should_not be_valid }
+      end
+
+      context 'from area codes 71-79' do
+        it { PhonesBrazil::CellPhone.new("71", "70111111").should_not be_valid }
+      end
+
+      context 'from area codes 81-89' do
+        it { PhonesBrazil::CellPhone.new("81", "70111111").should_not be_valid }
+      end
+
+      context 'from area codes 91-99' do
+        it { PhonesBrazil::CellPhone.new("91", "70111111").should_not be_valid }
       end
     end
 
