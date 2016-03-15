@@ -2,7 +2,7 @@
 
 Validates Brazilian phone numbers. Currently works only for cellphones.
 
-Validates area code (2 digits and existing area codes) and cellphone number size (currently 9 digits for area codes 11-28)
+Validates area code (2 digits and existing area code) and cellphone number size, which is currently 9 digits for the following states: AC, AL, AM, AP, BA, CE, DF, ES, GO, MA, MG, MT, MS, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP. The rest of Brazilian states uses 8 digits.
 
 == Usage
 
