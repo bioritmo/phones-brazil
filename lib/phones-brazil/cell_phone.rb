@@ -43,21 +43,27 @@ module PhonesBrazil
         (@number.size == 9 && !is_included?(21, @number.to_i)) ||
         (@number.size == 8 && is_included?(21, @number.to_i))
       when 22, 24, 27, 28
-        (@number.size == 9 && !is_included?([22,24,27,28], @number.to_i)) ||
-        (@number.size == 8 && is_included?([22,24,27,28], @number.to_i))
-      when 91, 92, 93, 94, 95, 96, 97, 98, 99
-        (@number.size == 9 && !is_included?([91, 92, 93, 94, 95, 96, 97, 98, 99], @number.to_i)) ||
-        (@number.size == 8 && is_included?([91, 92, 93, 94, 95, 96, 97, 98, 99], @number.to_i))
-      when 81, 82, 83, 84, 85, 86, 87, 88, 89
-        (@number.size == 9 && !is_included?([81, 82, 83, 84, 85, 86, 87, 88, 89], @number.to_i)) ||
-        (@number.size == 8 && is_included?([81, 82, 83, 84, 85, 86, 87, 88, 89], @number.to_i))
+        (@number.size == 9 && !is_included?([22, 24, 27, 28], @number.to_i)) ||
+        (@number.size == 8 && is_included?([22, 24, 27, 28], @number.to_i))
+      when 31, 32, 33, 34, 35, 37, 38
+        (@number.size == 9 && !is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i)) ||
+        (@number.size == 8 && is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i))
+      when 71, 73, 74, 75, 77, 79
+        (@number.size == 9 && !is_included?([71, 73, 74, 75, 77, 79], @number.to_i)) ||
+        (@number.size == 8 && is_included?([71, 73, 74, 75, 77, 79], @number.to_i))
+      when 81..89
+        (@number.size == 9 && !is_included?(81..89, @number.to_i)) ||
+        (@number.size == 8 && is_included?(81..89, @number.to_i))
+      when 91..99
+        (@number.size == 9 && !is_included?(91..99, @number.to_i)) ||
+        (@number.size == 8 && is_included?(91..99, @number.to_i))
       else
         @number.size == 8
       end
     end
 
     def is_included?(range, number)
-      sme_ranges[range].any? {|r| r.include?(number)}
+      sme_ranges[range].any? { |r| r.include?(number) }
     end
 
     def sme_ranges
@@ -66,9 +72,11 @@ module PhonesBrazil
           (79100000..79219999), (79230000..79499999)],
         12..19 => [(77000000..78999999)],
         21 => [(70000000..70999999), (77000000..78999999)],
-        [22,24,27,28] => [(77000000..78999999)],
-        [91, 92, 93, 94, 95, 96, 97, 98, 99] => [(74000000..78999999)],
-        [81, 82, 83, 84, 85, 86, 87, 88, 89] => [(74000000..78999999)]
+        [22, 24, 27, 28] => [(77000000..78999999)],
+        [31, 32, 33, 34, 35, 37, 38] => [(77000000..78999999)],
+        [71, 73, 74, 75, 77, 79] => [(77000000..78999999)],
+        81..89 => [(77000000..78999999)],
+        91..99 => [(77000000..78999999)]
       }
     end
 
