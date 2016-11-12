@@ -33,6 +33,11 @@ describe PhonesBrazil::CellPhone do
       end
     end
 
+    context 'from area code 61' do
+        it { PhonesBrazil::CellPhone.new("61", "970111111").should be_valid }
+        it { PhonesBrazil::CellPhone.new("61", "70111111").should be_valid }
+    end
+
     context 'from area codes 71, 73, 74, 75, 77, 79' do
       [71, 73, 74, 75, 77, 79].each do |area|
         it { PhonesBrazil::CellPhone.new(area, "971111111").should be_valid }

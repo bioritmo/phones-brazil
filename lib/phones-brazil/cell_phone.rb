@@ -58,7 +58,7 @@ module PhonesBrazil
         (@number.size == 9 && !is_included?(91..99, @number.to_i)) ||
         (@number.size == 8 && is_included?(91..99, @number.to_i))
       else
-        @number.size == 8
+        @number.size == 8 || @number.size == 9
       end
     end
 
