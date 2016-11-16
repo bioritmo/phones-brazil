@@ -34,32 +34,28 @@ module PhonesBrazil
     def valid_number_size?
       case @area
       when 11
-        (@number.size == 9 && !is_included?(11, @number.to_i)) ||
-        (@number.size == 8 && is_included?(11, @number.to_i))
+        valid_number_range?(11, @number)
       when 12..19
-        (@number.size == 9 && !is_included?(12..19, @number.to_i)) ||
-        (@number.size == 8 && is_included?(12..19, @number.to_i))
+        valid_number_range?(12..19, @number)
       when 21
-        (@number.size == 9 && !is_included?(21, @number.to_i)) ||
-        (@number.size == 8 && is_included?(21, @number.to_i))
+        valid_number_range?(21, @number)
       when 22, 24, 27, 28
-        (@number.size == 9 && !is_included?([22, 24, 27, 28], @number.to_i)) ||
-        (@number.size == 8 && is_included?([22, 24, 27, 28], @number.to_i))
+        valid_number_range?([22, 24, 27, 28], @number)
       when 31, 32, 33, 34, 35, 37, 38
-        (@number.size == 9 && !is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i)) ||
-        (@number.size == 8 && is_included?([31, 32, 33, 34, 35, 37, 38], @number.to_i))
+        valid_number_range?([31, 32, 33, 34, 35, 37, 38], @number)
       when 71, 73, 74, 75, 77, 79
-        (@number.size == 9 && !is_included?([71, 73, 74, 75, 77, 79], @number.to_i)) ||
-        (@number.size == 8 && is_included?([71, 73, 74, 75, 77, 79], @number.to_i))
+        valid_number_range?([71, 73, 74, 75, 77, 79], @number)
       when 81..89
-        (@number.size == 9 && !is_included?(81..89, @number.to_i)) ||
-        (@number.size == 8 && is_included?(81..89, @number.to_i))
+        valid_number_range?(81..89, @number)
       when 91..99
-        (@number.size == 9 && !is_included?(91..99, @number.to_i)) ||
-        (@number.size == 8 && is_included?(91..99, @number.to_i))
+        valid_number_range?(91..99, @number)
       else
-        @number.size == 8 || @number.size == 9
+        @number.size == 8
       end
+    end
+
+    def valid_number_range?(range, number)
+      is_included?(range, number.to_i) || number.size == 9
     end
 
     def is_included?(range, number)
@@ -79,6 +75,5 @@ module PhonesBrazil
         91..99 => [(77000000..78999999)]
       }
     end
-
   end
 end
