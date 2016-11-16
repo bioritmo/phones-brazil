@@ -32,9 +32,11 @@ module PhonesBrazil
     end
 
     def valid_number_size?
-      range = sme_ranges.keys.find{|k| k.include?(@area)}
-      return valid_number_range?(range, @number) if range
-      @number.size == 9
+      range ? valid_number_range?(range, @number) : @number.size == 9
+    end
+
+    def range
+      @range ||= sme_ranges.keys.find {|k| k.include?(@area) }
     end
 
     def valid_number_range?(range, number)
